@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="address"
+		class="com.samples.springcoredi.constructor.Address"
+		p:houseNumber="111" p:street="Main Street" p:city="New York" />
+	<!-- <bean name="emp" class="com.samples.springcoredi.constructor.Employee"> 
+		<constructor-arg value="121" /> <constructor-arg value="John" /> <constructor-arg 
+		ref="address" /> </bean> -->
+
+	<bean name="emp"
+		class="com.samples.springcoredi.constructor.Employee" c:id="141"
+		c:name="Bob" c:address-ref="address" />
+
+	<context:annotation-config />
+
+</beans>

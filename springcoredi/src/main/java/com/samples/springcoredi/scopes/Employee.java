@@ -1,4 +1,4 @@
-package com.samples.springcoredi;
+package com.samples.springcoredi.scopes;
 
 import org.springframework.beans.factory.annotation.Required;
 
