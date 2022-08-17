@@ -15,7 +15,10 @@ public class App {
 		//CarDealer dealer=(CarDealer) springContainer.getBean("cardealer");
 		//System.out.println(dealer);
 		
-		Customer customer=(Customer) springContainer.getBean("customer");
-		System.out.println(customer);
+		//Customer customer=(Customer) springContainer.getBean("customer");
+		//System.out.println(customer);
+		
+		ShoppingCart sc=(ShoppingCart) springContainer.getBean("shoppingcart");
+		System.out.println(sc);
 	}
 }
