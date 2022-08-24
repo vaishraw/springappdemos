@@ -1,5 +1,7 @@
 package com.samples.SpringORM.Dao.Impl;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,31 @@ public class ProductDaoImpl implements ProductDao {
 	public int create(Product product) {
 		Integer result = (Integer) hibernateTemplate.save(product);
 		return result;
+	}
+
+	@Override
+	@Transactional
+	public void update(Product product) {
+		hibernateTemplate.update(product);
+
+	}
+
+	@Override
+	@Transactional
+	public void delete(Product product) {
+		hibernateTemplate.delete(product);
+
+	}
+
+	@Override
+	public Product find(int id) {
+		
+		return hibernateTemplate.get(Product.class, id);
+	}
+
+	@Override
+	public List<Product> findAll() {
+		return hibernateTemplate.loadAll(Product.class);
 	}
 
 }
