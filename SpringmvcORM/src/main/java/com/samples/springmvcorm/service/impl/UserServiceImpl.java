@@ -1,5 +1,7 @@
 package com.samples.springmvcorm.service.impl;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,13 @@ public class UserServiceImpl implements UserService{
 	public int save(User user) {
 		
 		return userdao.create(user);
+	}
+
+	@Override
+	@Transactional
+	public List<User> getusers() {
+		
+		return userdao.findUsers();
 	}
 
 }
